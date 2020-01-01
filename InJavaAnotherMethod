@@ -1,0 +1,60 @@
+
+/*
+class LinkedListNode<T> {
+	public T data;
+	public LinkedListNode<T> next;
+
+	public LinkedListNode(T data) {
+		this.setData(data);
+		this.next = null;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+
+}
+* */
+public class solution {
+	public static LinkedListNode<Integer> skipMdeleteN(LinkedListNode<Integer> head, int M, int N) {
+  
+        int count=1;
+       LinkedListNode<Integer> temp1=head;
+
+       while(temp1!=null){
+       count = 1;
+       while(count<M){
+           if(temp1==null){
+               break;
+           }
+           temp1=temp1.next;
+           count++;
+       }
+           if(temp1==null){
+               break;
+           }
+       LinkedListNode <Integer> temp2=temp1.next;
+           if(temp2==null){
+               break;
+           }
+       int counter=0;
+       while(counter<N){
+           if(temp2==null){
+               break;
+           }
+           temp2=temp2.next;
+           counter++;
+       }
+      // System.out.print(temp1.data+" ");
+       temp1.next = temp2;
+       temp1=temp1.next;
+     //  temp2=temp1;
+       }
+       return head;
+}
+    
+}
